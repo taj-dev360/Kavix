@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kavix | Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <button onclick="goFeed()">Back</button>
+</header>
+
+<div class="profile-box">
+  <img id="profilePic" class="avatar">
+  <input type="file" onchange="uploadPhoto(event)">
+
+  <h2 id="profileName"></h2>
+  <p id="profileEmail"></p>
+  <p id="profileId"></p>
+
+  <h3>Friends</h3>
+  <div id="friendsList"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
