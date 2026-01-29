@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KAVIX • Feed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="logo">KAVIX</span>
+    <div>
+      <button class="ghost" onclick="goProfile()">Profile</button>
+      <button class="ghost" onclick="logout()">Logout</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="create-post">
+    <textarea id="postText" placeholder="What's on your mind?"></textarea>
+    <button onclick="createPost()">Share</button>
+  </div>
+
+  <div id="feed"></div>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
