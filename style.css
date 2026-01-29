@@ -1,51 +1,255 @@
-body {
+/* =========================
+   KAVIX — MODERN SOCIAL UI
+   ========================= */
+
+/* ---------- ROOT ---------- */
+:root {
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e5e7eb;
+  --radius: 14px;
+  --shadow-sm: 0 4px 12px rgba(0,0,0,.05);
+  --shadow-md: 0 12px 30px rgba(0,0,0,.08);
+}
+
+/* ---------- RESET ---------- */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f0f2f5;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ---------- AUTH (LOGIN / SIGNUP) ---------- */
 .center {
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
 }
 
-.auth-box, .profile-box {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
+.auth-box {
+  width: 360px;
+  background: var(--card);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
 }
 
-input, textarea, button {
+.auth-box h1 {
+  text-align: center;
+  margin-bottom: 22px;
+  letter-spacing: 2px;
+}
+
+/* ---------- INPUTS ---------- */
+input,
+textarea {
   width: 100%;
-  padding: 8px;
-  margin-top: 8px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  background: #fff;
 }
 
-header {
-  background: #1877f2;
-  color: white;
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* ---------- BUTTONS ---------- */
+button {
+  width: 100%;
   padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(37,99,235,.35);
+}
+
+button.secondary {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+/* ---------- HEADER ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--card);
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--border);
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
-main {
-  max-width: 600px;
-  margin: 20px auto;
+header h2 {
+  cursor: pointer;
+  letter-spacing: 1px;
 }
 
-.create-post, .post {
-  background: white;
-  padding: 10px;
-  border-radius: 8px;
+header button {
+  width: auto;
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+main {
+  max-width: 680px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* ---------- SEARCH ---------- */
+#searchInput {
+  margin-bottom: 14px;
+}
+
+/* ---------- CREATE POST ---------- */
+.create-post {
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.create-post textarea {
+  height: 90px;
+  resize: none;
+}
+
+/* ---------- FEED ---------- */
+#feed {
   margin-top: 10px;
 }
 
+/* ---------- POST CARD ---------- */
+.post {
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  margin-top: 16px;
+}
+
+.post b {
+  display: block;
+  font-size: 15px;
+}
+
+.post p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.post small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ---------- POST ACTIONS ---------- */
+.post button {
+  background: transparent;
+  color: var(--primary);
+  box-shadow: none;
+  padding: 6px 0;
+  width: auto;
+  font-size: 13px;
+}
+
+.post button:hover {
+  text-decoration: underline;
+}
+
+/* ---------- COMMENTS ---------- */
+.post input {
+  margin-top: 10px;
+  background: #f8fafc;
+}
+
+.post .comment {
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* ---------- PROFILE PAGE ---------- */
+.profile-box {
+  max-width: 420px;
+  margin: 40px auto;
+  background: var(--card);
+  padding: 26px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
 .avatar {
-  width: 80px;
-  height: 80px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 3px solid var(--primary);
+}
+
+.profile-box h2 {
+  margin: 6px 0;
+}
+
+.profile-box p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+/* ---------- FRIENDS LIST ---------- */
+#friendsList {
+  margin-top: 14px;
+}
+
+#friendsList p {
+  background: #f1f5f9;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  header {
+    padding: 12px 14px;
+  }
+
+  main {
+    margin: 16px auto;
+  }
+
+  .auth-box {
+    width: 90%;
+  }
 }
